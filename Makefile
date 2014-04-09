@@ -1,13 +1,19 @@
 CC=pdflatex
 
-MODEL=./Model
+MODELDIR=./Model
+MENV=TEXINPUTS=".:$(MODELDIR):"
 
-.phony: all clean
+TARGET=Proposta.pdf
 
-all: Proposta.pdf
+.phony: all open clean
+
+all: open
+
+open: $(TARGET)
+	evince $< &
 
 %.pdf: %.tex
-	TEXINPUTS=".:$(MODEL):" $(CC) $<
+	 $(MENV) $(CC) $<
 
 clean:
 	rm -rf *.{aux,lof,log,lot,out,pdf,toc}
