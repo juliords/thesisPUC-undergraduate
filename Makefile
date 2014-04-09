@@ -10,4 +10,4 @@ all: Exemplo.pdf
 	TEXINPUTS=".:$(MODEL):" $(CC) $<
 
 clean:
-	rm -rf *{aux,lof,log,lot,out,pdf,toc}
+	rm -rf *.{aux,lof,log,lot,out,pdf,toc}
