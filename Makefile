@@ -4,7 +4,7 @@ MODEL=./Model
 
 .phony: all clean
 
-all: Exemplo.pdf
+all: Proposta.pdf
 
 %.pdf: %.tex
 	TEXINPUTS=".:$(MODEL):" $(CC) $<
