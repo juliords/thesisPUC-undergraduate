@@ -1129,10 +1129,10 @@
 %
   \ifthenelse{\boolean{hasdedication}}{\puc@showdedication}{}%
   \ifpuc@finalproject{\ifthenelse{\boolean{hasepigraph}}{\puc@showepigraph}{}}\fi
-  \puc@showacknowledgment%
-  \puc@showabstract%
-  \puc@showabstractuk%
-  \puc@showtables%   
+%  \puc@showacknowledgment%
+%  \puc@showabstract%
+%  \puc@showabstractuk%
+%  \puc@showtables%   
   \ifthenelse{\boolean{puc@finalproject}}{}{\ifthenelse{\boolean{hasepigraph}}{\puc@showepigraph}{}}
 %
   \puc@setmargins@text%
