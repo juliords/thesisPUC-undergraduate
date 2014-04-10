@@ -7,7 +7,7 @@ TARGET=Proposta.pdf
 
 .phony: all open clean
 
-all: open
+all: clean open
 
 open: $(TARGET)
 	evince $< &
