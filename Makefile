@@ -1,19 +1,21 @@
-CC=pdflatex
-
-LIBDIR=./lib
-MENV=TEXINPUTS=".:$(LIBDIR):"
-
-TARGET=Proposta.pdf
+LIBDIR=./lib/
+TARGET=exemplo
 
 .phony: all open clean
 
-all: clean open
+all: $(TARGET).pdf
 
-open: $(TARGET)
+test:
+	$(MENV) pdflatex exemplo
+
+$(TARGET).pdf: $(TARGET).tex $(TARGET).bib
+	TEXINPUTS=".:$(LIBDIR):" pdflatex $(TARGET)
+	BSTINPUTS=".:$(LIBDIR):" bibtex $(TARGET)
+	TEXINPUTS=".:$(LIBDIR):" pdflatex $(TARGET)
+	TEXINPUTS=".:$(LIBDIR):" pdflatex $(TARGET)
+
+open: $(TARGET).pdf
 	evince $< &
 
-%.pdf: %.tex
-	 $(MENV) $(CC) $<
-
 clean:
-	rm -rf *.{aux,lof,log,lot,out,pdf,toc}
+	rm -rf *.{aux,lof,log,lot,out,dvi,toc,bbl,blg,brf,pdf}
