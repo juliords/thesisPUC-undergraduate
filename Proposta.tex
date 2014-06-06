@@ -124,13 +124,68 @@
 
 \begin{document}
 
-\input{Capitulos/Introducao}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{Capitulos/EstadoDaArte}
+\chapter{Introdu\c{c}\~ao}
 
-\input{Capitulos/PropostaEObjetivos}
+A Pontifícia Universidade Católica do Rio de Janeiro (PUC-Rio) oferece a seus alunos diversos cursos de graduação, cujas disciplinas são contabilizadas e disponibilizadas em um sistema de contagem de créditos. Os alunos precisam conter em seus históricos escolares um número mínimo de créditos pertencentes a um determinado currículo de um curso para que obtenham seus diplomas. 
 
-\input{Capitulos/PlanoDeAcao}
+Assim, e ao longo de sua vida universitária, os alunos da PUC-Rio buscam organizar os semestres escolares e escolhas de disciplinas de forma que consigam se formar no menor tempo possível. Apenas alunos calouros não fazem escolhas de disciplinas (e respectivos créditos). A partir do segundo período de seu curso, cada aluno da PUC-Rio deve escolher quais disciplinas para o novo período escolar pretende cursar.
+
+As decisões sobre a escolha de disciplinas são baseadas na oferta de disciplinas daquele período, nos pré-requisitos e compatibilidade de horários. Há também de se considerar turmas distintas de mesmas disciplinas, horários conflitantes, limite no total de vagas oferecidas por turma e total de créditos permitido por semestre. Há também preferências (ou impedimentos) de caráter pessoal, como é o caso de alunos que têm outras atividades (e.g. estágio em empresas ou laboratórios acadêmicos) em paralelo com suas vida acadêmica. Cabe observar que a PUC-Rio determina prioridades em relação à ocupação de vagas de acordo com uma ordenação interna que pondera basicamente o desempenho acadêmico do aluno (C.R. – coeficiente de rendimento), a quantidade de créditos já obtidos, consequentemente, o tempo estimado para completar os créditos necessários para concluir o curso.
+
+A PUC-Rio requisita, a cada semestre, que os alunos preparem uma solicitação de matrícula com três opções contendo o conjunto de disciplinas e turmas que pretende cursar no semestre seguinte. Esta escolha é chamada de grade: disciplinas, dias e horários escolhidos em função da lista de turmas oferecidas pela Universidade para o período seguinte. Há restrições de montagem da grade, como por exemplo, um valor máximo de horas (ou créditos) semanais, turma de matérias distintas par a par; e turmas cujos horários não conflitem entre si, ou seja, que tenham os horários disjuntos, também par a par.
+
+Caso a primeira opção de um aluno não seja totalmente atendida, por exemplo, por falta de vaga, o sistema de matrícula tenta incluir as disciplinas escolhidas em segunda ou terceira opção, buscando atender os pedidos de um aluno. É fato que muitos alunos não se dão por satisfeitos pois muitas disciplinas solicitadas ficam de fora da seleção final de disciplinas efetivamente matriculadas inicialmente. Sem o apoio de uma ferramenta adequada, os ajustes de matrícula em disciplinas, realizados a cada início de semestre escolar, se tornaram cada vez mais frequentes. Entre outros motivos, uma das razões que fazem com que os alunos não fiquem satisfeitos com sua grade de disciplinas escolar diz respeito às decisões equivocadas no momento de solicitação e da montagem da grade de opções.
+
+Consequentemente, a PUC-Rio deve alocar mais recursos para tentar resolver a situação individual de cada aluno pós-solicitação, os alunos precisam comparecer, muitas das vezes, pessoalmente para tentar corrigir suas grades e todo o processo fica mais complicado, e com resultados muitas das vezes indesejáveis. Implicando assim em perdas para ambas as partes.
+
+% \begin{figure}
+%   \includegraphics*[width=\linewidth]{ctor4_none.eps}
+%   \caption{Uma figura}
+% \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Estado da Arte}
+
+Para auxiliar os alunos na montagem da grade há um grande esforço por parte da PUC-Rio na orientação de como deve ser feito o procedimento de solicitação de matrícula. Este, por sua vez, deve ser realizado através do site da universidade, por meio de uma interface que dá margem à diversas interpretações quanto ao seu funcionamento.
+
+Muitos alunos, por sua vez, buscam se informar e combinar com seus colegas para montar a melhor grade possível. Montando planilhas e fazendo simulações do que poderia acontecer caso suas solicitações não fossem atendidas. Infelizmente esta abordagem implica em uma quantidade de trabalho muito grande, e em cima de interpretações muitas das vezes incorretas de como o processo deve ser feito.
+
+Diversas críticas e discussões acerca do modelo como um todo são feitas. No entanto, nenhuma solução concreta havia sido prosposta ainda. De acordo com o apresentado até o momento, o problema persiste.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Proposta e Objetivos do Trabalho}
+
+Propõe-se então o sistema PrISMA (Programa de Instrução à Solicitação de Matrícula acadêmica. Trata-se de uma webpage que reune todas as funcionalidades necessárias para auxiliar os alunos no processo de matrícula.
+
+O objetivo do sistema é apresentar uma interface muito poderosa, reunindo todos os dados necessários à solicitação, e ao mesmo tempo intuitiva, de forma que os alunos não fiquem perdidos durante o processo. No entanto, o processo como um todo exige o acesso à muita informação ao mesmo tempo, tornando o desenvolvimento do projeto um grande desafio.
+
+O básico, para os alunos, seria reunir num mesmo ambiente seu Falta Cursar, disciplinas oferecidas pelo Micro Horário e as disciplinas já selecionadas para a grade do próximo período. Assim como uma visualização daquilo de já foi selecionado no formato de tabela de horários semanal. Dessa maneira, não seria mais necessário se perder no meio de diversas aplicações em busca de todas essas informações. Tudo estaria reunido em um único lugar.
+
+Além da preocupação com a nevegação, existe também a preocupação com a corretude da grade gerada. Por especificação todas (ou pelo menos a maioria) das regras que impedem a solicitação de disciplinas devem ser implementadas. Sendo a principal delas a regra de pré-requisitos. Para tal se faz necessário do histórico de disciplinas cursadas dos alunos, e do seu C.R. acumulado. Dessa maneira, conforme o aluno for utilizando e selecionando as disciplinas a serem cursadas, o sistema realiza a verificação e informa o aluno em caso de algum problema.
+
+Buscando diminuir a quantidade de dados apresentados, ao invés de exibir as disciplinas do Falta Cursar do aluno, é précomputado o conjunto de disciplinas chamado de Pode Cursar. Este subconjunto contém apenas as disciplinas que não estão presas por nenhum pré-requisito. 
+
+Olhando do ponto de vista das multiplas opções no campo de solicitação, identifica-se uma grande incompreensão por parte dos alunos dessa funcionalidade no sistema da PUC. Essa falta de clareza se trata de uma das principais fontes de erros dos alunos na hora de preencher a solicitação. Por se tratar de um ponto crítico, propõe-se uma funcionalidade que, passo a passo, mostre ao usuário o que aconteceria caso alguma disciplina, de algum opção fosse rejeitada, e que impacto isso teria no restante da solicitação.
+
+Após terem suas grades montadas, deve-se preencher manualmente no site da PUC-Rio os dados gerados, visto que se trata de um sistema independente. Uma solução para isto seria a definição de um padrão de arquivo exportado pelo PrISMA que fosse aceito pelo PUC Online (setor responsável pelo sistema da PUC-Rio). Entretanto, por se tratar de procedimentos burocráticos, não será de fato implementado pela PUC. Apesar de que o arquivo ainda assim possa ser gerado.
+
+Para aqueles que oferecem as disciplinas é interessante ter dados estatísticos de uso do sistema por parte dos alunos. Apresentações de gráficos de lotação das turmas e como se comportam os alunos ao realizar o procedimento de escolha. Dessa maneira pode-se aprender com a necessidade dos alunos.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Plano de A\c{c}\~ao}
+
+Deve ser destacado que o sistema proposto já foi implementado e usado por cerca de 3000 pessoas nos períodos passados. Dessa maneira, o plano de ação se resume à uma extensa documentação do que foi feito para que, algum dia, alguém possa colocar o projeto para frente utilizando todo o conhecimento adquirido.
+
+Algumas outras funcionalidades como estatísticas de uso e exportação dos dados gerados pelos usuários será implementado na segunda parte do projeto. A primeira é muito interessantes do ponto de vista daqueles que organizam o processo de matrícula. A segunda aos alunos, que não precisariam entrar manualmente com os dados no site da PUC-Rio.
+
+Para que os devidos resultados sejam alcançados será priorizada a documentação. Começando pelo ambiente de desenvolvimento, passando pelo porquê das ferramentas utilizadas até a arquitetura final do sistema.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \arial
 \bibliography{Exemplo}

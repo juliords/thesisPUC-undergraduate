@@ -1,7 +1,7 @@
 CC=pdflatex
 
-MODELDIR=./Model
-MENV=TEXINPUTS=".:$(MODELDIR):"
+LIBDIR=./lib
+MENV=TEXINPUTS=".:$(LIBDIR):"
 
 TARGET=Proposta.pdf
 
