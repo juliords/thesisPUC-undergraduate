@@ -5,9 +5,6 @@ TARGET=exemplo
 
 all: $(TARGET).pdf
 
-test:
-	$(MENV) pdflatex exemplo
-
 $(TARGET).pdf: $(TARGET).tex $(TARGET).bib
 	TEXINPUTS=".:$(LIBDIR):" pdflatex $(TARGET)
 	BSTINPUTS=".:$(LIBDIR):" bibtex $(TARGET)
