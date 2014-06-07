@@ -5,11 +5,11 @@ TARGET=exemplo
 
 all: $(TARGET).pdf
 
-$(TARGET).pdf: $(TARGET).tex $(TARGET).bib
-	TEXINPUTS=".:$(LIBDIR):" pdflatex $(TARGET)
-	BSTINPUTS=".:$(LIBDIR):" bibtex $(TARGET)
-	TEXINPUTS=".:$(LIBDIR):" pdflatex $(TARGET)
-	TEXINPUTS=".:$(LIBDIR):" pdflatex $(TARGET)
+%.pdf: %.tex %.bib
+	TEXINPUTS=".:$(LIBDIR):" pdflatex $*
+	BSTINPUTS=".:$(LIBDIR):" bibtex   $*
+	TEXINPUTS=".:$(LIBDIR):" pdflatex $*
+	TEXINPUTS=".:$(LIBDIR):" pdflatex $*
 
 open: $(TARGET).pdf
 	evince $< &
