@@ -3,8 +3,12 @@
 *.log
 *.lot
 *.out
-*.pdf
+*.dvi
 *.toc
+*.bbl
+*.blg
+*.brf
+*.pdf
 *.swp
 *~
 .ref/
