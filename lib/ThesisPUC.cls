@@ -154,7 +154,7 @@
 \RequirePackage{indentfirst}
 
 % number of pages
-\RequirePackage{lastpage}
+%\RequirePackage{lastpage}%
 
 % hyperlink and pdf bookmarks
 \RequirePackage[backref,pdftex,colorlinks=false,bookmarksopen=true,breaklinks=true]{hyperref}
@@ -1129,10 +1129,10 @@
 %
   \ifthenelse{\boolean{hasdedication}}{\puc@showdedication}{}%
   \ifpuc@finalproject{\ifthenelse{\boolean{hasepigraph}}{\puc@showepigraph}{}}\fi
-%  \puc@showacknowledgment%
-%  \puc@showabstract%
-%  \puc@showabstractuk%
-%  \puc@showtables%   
+  \puc@showacknowledgment%
+  \puc@showabstract%
+  \puc@showabstractuk%
+  \puc@showtables%   
   \ifthenelse{\boolean{puc@finalproject}}{}{\ifthenelse{\boolean{hasepigraph}}{\puc@showepigraph}{}}
 %
   \puc@setmargins@text%
