@@ -154,7 +154,7 @@
 \RequirePackage{indentfirst}
 
 % number of pages
-%\RequirePackage{lastpage}%
+\RequirePackage{lastpage}
 
 % hyperlink and pdf bookmarks
 \RequirePackage[backref,pdftex,colorlinks=false,bookmarksopen=true,breaklinks=true]{hyperref}
