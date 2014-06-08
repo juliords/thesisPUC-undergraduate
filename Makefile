@@ -1,5 +1,5 @@
 LIBDIR=./lib/
-TARGET=ProjetoFinal2
+TARGET=exemplo
 
 .phony: all open clean
 
