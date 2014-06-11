@@ -1,5 +1,5 @@
 LIBDIR=./lib/
-TARGET=exemplo
+TARGET=relatorio1
 
 .phony: all open clean
 
@@ -15,4 +15,4 @@ open: $(TARGET).pdf
 	evince $< &
 
 clean:
-	rm -rf *.{aux,lof,log,lot,out,dvi,toc,bbl,blg,brf,pdf}
+	rm -rf *.{aux,lof,log,lot,out,pdf,toc,bbl,blg,brf,pdf}
