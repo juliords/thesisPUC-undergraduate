@@ -15,4 +15,4 @@ open: $(TARGET).pdf
 	evince $< &
 
 clean:
-	rm -rf *.{aux,lof,log,lot,out,pdf,toc,bbl,blg,brf,pdf}
+	rm -rf *.{aux,lof,log,lot,out,toc,bbl,blg,brf}

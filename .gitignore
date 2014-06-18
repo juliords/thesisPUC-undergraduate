@@ -11,4 +11,7 @@
 *.pdf
 *.swp
 *~
-.ref/
+.ref
+.dropbox
+referencia.bib
+referencia.tex
