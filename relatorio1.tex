@@ -17,7 +17,7 @@
 \titulo{PrISMA}
 \titulouk{PrISMA}
 \subtitulo{Programa de Instru\c{c}\~{a}o \`{a} Solicita\c{c}\~{a}o de Matr\'{i}cula Acad\^{e}mica}
-\dia{09} \mes{Abril} \ano{2014}
+\dia{23} \mes{Junho} \ano{2014}
 
 \cidade{Rio de Janeiro}
 \CDD{510}
@@ -41,8 +41,6 @@ Ao professor Luiz Fernando Bessa Seibel, que me acolheu em seu laboratório dura
 À todos aqueles que estiveram ao meu lado durante toda a minha graduação que, além de compartilhar experiências acadêmicas, também compartilharam experiências pessoais.
 
 E, não menos importante, aos alunos da PUC-Rio que utilizaram o PrISMA. Sem vocês este projeto não teria o sucesso que foi alcançado.
-
-Cada um de vocês foi importante neste processo. Muito obrigado.
 }
 
 
@@ -102,47 +100,47 @@ Consequentemente, a PUC-Rio deve alocar mais recursos para tentar resolver a sit
 
 \chapter{Estado da Arte}
 
-Para auxiliar os alunos na montagem da grade há um grande esforço por parte da PUC-Rio na orientação de como deve ser feito o procedimento de solicitação de matrícula. Este, por sua vez, deve ser realizado através do site da universidade, por meio de uma interface que dá margem a diversas interpretações quanto ao seu funcionamento.
+Para auxiliar os alunos na montagem da grade há um grande esforço por parte da PUC-Rio na orientação de como deve ser feito o procedimento de solicitação de matrícula. Este, por sua vez, deve ser realizado através do site da universidade, por meio de uma interface não tão clara, que dá margem a diversas interpretações quanto ao seu funcionamento.
 
-Muitos alunos, por sua vez, buscam se informar e combinar com seus colegas para montar a melhor grade possível, montando planilhas e fazendo simulações do que poderia acontecer caso suas solicitações não fossem atendidas. Infelizmente esta abordagem implica em uma quantidade de trabalho muito grande, e em cima de interpretações muitas das vezes incorretas de como o processo deveria ser feito.
+Muitos alunos, por sua vez, buscam se informar e combinar com seus colegas para montar a melhor grade possível, montando planilhas e fazendo simulações do que poderia acontecer caso suas solicitações não fossem atendidas. Infelizmente, esta abordagem implica em uma quantidade de trabalho muito grande, e baseadas em interpretações muitas das vezes incorretas de como o processo deveria ser feito.
 
-Diversas críticas e discussões acerca do modelo como um todo são feitas. No entanto, nenhuma solução concreta havia sido proposta ainda. De acordo com o apresentado até o momento, o problema persiste.
+Diversas críticas e discussões acerca do modelo como um todo são feitas. No entanto, nenhuma solução concreta havia sido proposta ainda. Desta forma, de acordo com o apresentado até o momento, o problema persiste.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Solução proposta}
 
-Propõe-se então o sistema PrISMA (Programa de Instrução à Solicitação de Matrícula acadêmica). Trata-se de uma aplicação web que reúne todas as funcionalidades necessárias para auxiliar os alunos no processo de matrícula.
+Propõe-se então o sistema PrISMA (Programa de Instrução à Solicitação de Matrícula acadêmica), que se trata de uma aplicação web que reúne todas as funcionalidades necessárias para auxiliar os alunos no processo de matrícula.
 
-O objetivo do sistema é apresentar uma interface muito poderosa, reunindo todos os dados necessários à solicitação, e ao mesmo tempo intuitiva, de forma que os alunos não fiquem perdidos durante o processo. Isso se faz necessário pois o processo como um todo exige o acesso à muita informação ao mesmo tempo, tornando o desenvolvimento do projeto um grande desafio.
+O objetivo do sistema é apresentar uma interface muito poderosa, reunindo todos os dados necessários à solicitação, e ao mesmo tempo intuitiva, de forma que os alunos não fiquem perdidos durante o processo de matrícula. Isso se faz necessário pois o processo como um todo exige o acesso à muita informação ao mesmo tempo, fazendo com que o desenvolvimento do projeto seja um grande desafio.
 
-O básico, para os alunos, seria reunir num mesmo ambiente seu Falta Cursar, disciplinas oferecidas pelo Micro Horário e as disciplinas já selecionadas para a grade do próximo período. Assim como uma visualização daquilo de já foi selecionado no formato de tabela de horários semanal. Dessa maneira, não seria mais necessário se perder no meio de diversas aplicações em busca de todas essas informações. Tudo estaria reunido em um único lugar.
+O básico, para os alunos, seria reunir num mesmo ambiente seu Falta Cursar, disciplinas oferecidas pelo Micro Horário\footnote{O Micro Horário é uma planilha disponibilizada pela PUC-Rio a cada transição de semestre. Nela são apresentadas todas as turmas que serão disponibilizadas no período seguinte.} e as disciplinas já selecionadas para a grade do próximo período. Assim como uma visualização daquilo que já foi selecionado no formato de tabela de horários semanal. Dessa maneira, não seria mais necessário se perder no meio de diversas outras ferramentas em busca de todas essas informações. Tudo estaria reunido em um único lugar.
 
-Além da preocupação com a navegação, existe também a preocupação com a corretude da grade gerada. Por especificação, todas (ou pelo menos a maioria) das regras que impedem a solicitação de disciplinas devem ser implementadas. Sendo a principal delas a regra de pré-requisitos. Para tal, se faz necessário do histórico de disciplinas cursadas dos alunos, e do seu C.R. acumulado. Dessa maneira, conforme o aluno for utilizando e selecionando as disciplinas a serem cursadas, o sistema realiza a verificação e informa o aluno em caso de algum problema.
+Além da preocupação com a navegação, existe também a preocupação com a corretude da grade gerada. Por especificação, todas (ou pelo menos a maioria) das regras que impedem a solicitação de disciplinas devem ser implementadas. Sendo a principal delas a regra de pré-requisitos\footnote{A regra de pré-requisitos diz que todas as disciplinas que são pré-requisito de outra disciplina devem ser cursadas antes desta última ser solicitada.}, que torna necessário possuir o histórico de disciplinas cursadas dos alunos, e do seu C.R. acumulado. Dessa maneira, conforme o aluno for utilizando e selecionando as disciplinas a serem cursadas, o sistema realiza a verificação e informa o aluno em caso de algum problema.
 
-Buscando diminuir a quantidade de dados apresentados, ao invés de exibir as disciplinas do Falta Cursar do aluno, é précomputado o conjunto de disciplinas chamado de Pode Cursar. Este subconjunto contém apenas as disciplinas que não estão presas por nenhum pré-requisito. 
+Buscando diminuir a quantidade de dados apresentados, ao invés de exibir todas as disciplinas do Falta Cursar do aluno, é précomputado o conjunto de disciplinas chamado de Pode Cursar. Este subconjunto contém apenas aquelas disciplinas que não estão presas por nenhum pré-requisito. Diminuindo assim a quantidade de disciplinas apresentadas, ao mesmo tempo que evita a solicitação daquelas presas por pré-requisitos ou mesmo já cursadas.
 
-Olhando do ponto de vista das múltiplas opções no campo de solicitação, identifica-se uma grande incompreensão por parte dos alunos dessa funcionalidade no sistema da PUC. Essa falta de clareza se trata de uma das principais fontes de erros dos alunos na hora de preencher a solicitação. Por se tratar de um ponto crítico, propõe-se uma funcionalidade que, passo a passo, mostre ao usuário o que aconteceria caso alguma disciplina, de alguma opção fosse rejeitada, e que impacto isso teria no restante da solicitação.
+Quanto às múltiplas opções no campo de solicitação, identifica-se uma grande incompreensão por parte dos alunos dessa funcionalidade no sistema da PUC. Essa falta de clareza é uma das principais fontes de erros dos alunos na hora de preencher a solicitação. Por se tratar de um ponto crítico, propõe-se uma funcionalidade que, passo a passo, mostre ao usuário o que aconteceria caso alguma disciplina de alguma opção fosse rejeitada, e que impacto isso teria no restante da solicitação.
 
-Após terem suas grades montadas, deve-se preencher manualmente no site da PUC-Rio os dados gerados, já que se trata de um sistema independente. Uma solução para isto seria a definição de um padrão de arquivo exportado pelo PrISMA que fosse aceito pelo PUC Online (setor responsável pelo sistema da PUC-Rio). Entretanto, por se tratar de procedimentos burocráticos, não será de fato implementado pela PUC.
+Por ser um sistema independente, após terem suas grades montadas, deve-se preencher manualmente no site da PUC-Rio os dados gerados. Uma solução para isto seria a definição de um padrão de arquivo exportado pelo PrISMA que fosse aceito pelo PUC Online (setor responsável pelo sistema de matrícula da PUC-Rio). Entretanto, por se tratar de procedimentos burocráticos, não é possível ser utilizado pela PUC.
 
-Para aqueles que oferecem as disciplinas é interessante ter dados estatísticos de uso do sistema por parte dos alunos. Apresentações de gráficos de lotação das turmas e como se comportam os alunos ao realizar o procedimento de escolha. Dessa maneira pode-se aprender com a necessidade dos alunos.
+De outro ponto de vista, para aqueles que oferecem as disciplinas é interessante ter dados estatísticos de uso do sistema por parte dos alunos. Apresentações de gráficos de lotação das turmas e como se comportam os alunos ao realizar o procedimento de escolha. Dessa maneira pode-se aprender com a necessidade dos alunos e ofertar uma quantidade de turmas mais condizente com a demanda.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Projeto}
 
-Nesta etapa será apresentada a estratégia utilizada no desenvolvimento do sistema. Aproveitando-se do fato de que o domínio do problema já foi apresentado e de que o objetivo a ser alcançado está bem definido.
+Nesta etapa será apresentada a estratégia utilizada no desenvolvimento do sistema, aproveitando-se do fato de que o domínio do problema já foi apresentado e de que o objetivo a ser alcançado está bem definido.
 
-Por enquanto, é de conhecimento geral que o resultado do projeto será uma aplicação web, onde os alunos terão acesso e poderão realizar todas as operações online. No entanto, na verdade são necessários muitos passos para se alcançar este objetivo. Por isso este tópico será abordado em três etapas:
+Por enquanto, sabe-se que o resultado do projeto será uma aplicação web, onde todos os alunos terão acesso e poderão realizar todas as operações online. No entanto, são necessários muitos passos para se alcançar este objetivo. Dessa maneira este tópico será abordado em três etapas:
 
 \section{Design}
 
-A parte mais importante de um sistema que interage diretamente com o público se chama experiência do usuário, e é muito simples enxergar isso. Quando um sistema extremamente poderoso se torna ao mesmo tempo extremamente complexo de ser utilizado, apenas os usuários mais dedicados farão uso dele. Caso apresentasse uma interface agradável aos olhos e de fácil compreensão, seria muito mais provável de que usuários menos dedicados também pudessem tirar proveito dos seus benefícios, contribuindo assim para a aceitação do sistema.
+A parte mais importante de um sistema que interage diretamente com o público é chamada de experiência do usuário, e é muito simples enxergar isso. Quando um sistema extremamente poderoso se torna ao mesmo tempo extremamente complexo de ser utilizado, apenas os usuários mais dedicados farão uso dele. Caso apresentasse uma interface agradável aos olhos e de fácil compreensão, seria muito mais provável de que usuários menos dedicados também pudessem tirar proveito dos seus benefícios, contribuindo assim para a aceitação do sistema.
 
-Com essa preocupação em mente que foi pensado o PrISMA. Tornar todas as funcionalidades e posicionamentos nas telas o mais óbvio possível, o que é um grande desafio, dado que são muitas as informações e possibilidades de interação que devem ser apresentadas aos usuários ao mesmo tempo.
+Com essa preocupação em mente que foi pensado o layout do PrISMA. Tornar todas as funcionalidades e posicionamentos dos elementos nas telas o mais óbvio possível, o que é um grande desafio pois são muitas as informações e possibilidades de interação que devem ser apresentadas aos usuários ao mesmo tempo.
 
-Foi então feita uma parceria com um grupo do curso de Design (nota de rodapé: São eles: Gabriel Martinelli, Denis Neves, Glauber Borges e Maurício Fragale) da PUC-Rio que, por coincidência, já havia trabalhado na interface de um sistema com a mesma proposta. Já haviam feito estudo do caso e apresentado como projeto final de uma disciplina do curso deles e, dessa forma, criticada exaustivamente por seus professores. Dessa forma, foi apresentado o primeiro conceito do PrISMA.
+Foi então feita uma parceria com um grupo do curso de Design\footnote{São eles: Gabriel Martinelli, Denis Neves, Glauber Borges e Maurício Fragale} da PUC-Rio que já havia trabalhado na interface de um sistema com a mesma proposta. Já haviam inclusive feito estudo do caso e apresentado como projeto final de uma disciplina do curso deles, e por isso criticada exaustivamente por seus professores. Dessa forma, foi apresentado o primeiro conceito do PrISMA.
 
 \begin{figure}[H]
     \centering
@@ -150,15 +148,15 @@ Foi então feita uma parceria com um grupo do curso de Design (nota de rodapé: 
     \caption{Primeira versão do layout.}
 \end{figure}
 
-Conforme a proposta original, é apresentado ao usuário durante toda a navegação uma tabela de horários por dias da semana. Com ela é possível visualizar claramente quais turmas estão sendo escolhidas, em quais horários e quais os conflitos entre elas.
+Conforme a proposta original, é apresentado ao usuário durante toda a navegação uma tabela de horários de dias da semana. Com ela é possível visualizar claramente quais turmas estão sendo escolhidas, em quais horários e quais os conflitos que podem vir a ocorrer entre elas.
 
-No lado esquerdo ficariam localizados todos os dados necessários aos alunos, como seu Falta-Cursar, já filtrado pelas disciplinas que ele pode cursar (rodapé: Disciplinas ainda não cursadas que não estão presas por nenhum pré-requisito.), os dados das turmas disponibilizadas para o próximo período (Micro-Horário) e as turmas que foram selecionadas até o momento. Reunindo assim todos os dados em apenas um lugar. E se aproveitando do fato de que alguns dados não precisam, necessariamente, ser visualizados ao mesmo tempo que outros.
+No lado esquerdo ficam localizados todos os dados necessários pelos alunos, como seu Falta-Cursar, já filtrado pelas disciplinas que ele pode cursar, os dados das turmas disponibilizadas para o próximo período (Micro Horário) e as turmas que foram selecionadas até o momento. Dessa forma todos os dados são reunidos em um único lugar e, se aproveitando do fato que não precisam ser visualizados ao mesmo tempo, são organizados em abas, de forma a minimizar a quantidade de dados apresentados em um dado contexto.
 
 \section{Front-end}
 
-Para que o projeto seja classificado como aplicação web deve-se tomar o cuidado para que a página carregada não seja recarregada por completo a cada interação do usuário, e que apenas os pontos de interesse assim o sejam. Dessa maneira, além de apresentar uma navegação mais fluida, há também a diminuição do trafego de dados no servidor, visto que ele não estará enviando a mesma informação várias vezes para um mesmo cliente.
+Para que o projeto seja classificado como aplicação web se faz necessário tomar o cuidado para que a página carregada não seja recarregada por completo a cada interação do usuário, e que apenas os pontos de interesse assim o sejam. Dessa maneira, além de apresentar uma navegação mais fluida, há também a diminuição do trafego de dados no servidor, visto que ele não estará enviando a mesma informação várias vezes para um mesmo cliente.
 
-Para tornar isso possível foram utilizadas as seguintes ferramentas:
+Para tornar isso possível são utilizadas as seguintes ferramentas:
 \begin{itemize}
 	\item \cite{Backbone} Framework MVC escrito em Javascript que tem por objetivo organizar a estrutura da aplicação, como persistência de dados, eventos, etc.
 	\item \cite{Underscore} Biblioteca com diversas aplicações, mas a utilizada foi como controle dos templates utilizados. Isto é, controla a renderização de apenas parte da página.
@@ -169,15 +167,15 @@ Para tornar isso possível foram utilizadas as seguintes ferramentas:
 
 \section{Back-end}
 
-Por se tratar de uma aplicação executada no navegador dos alunos, sem a necessidade de instalação, se faz necessário de um servidor para responder às requisições feitas. Assim como ele deve permitir que os usuários tenham acesso apenas aos seus dados, e não de outros, de modo a garantir segurança.
+Por se tratar de uma aplicação executada no navegador dos alunos, sem a necessidade de instalação, é necessário utilizar um servidor para responder às requisições feitas pelos navegadores dos alunos, assim como ele deve permitir que os usuários tenham acesso apenas aos seus dados, de modo a garantir segurança.
 
-Para que as requisições sejam respondidas é necessário utilizar um servidor HTTP que, por ser de fácil configuração e conseguir lidar facilmente com uma grande quantidade de solicitações, foi escolhido o Apache HTTP Server.
+Para que as requisições sejam respondidas é necessário utilizar um servidor HTTP que, por ser de fácil configuração e conseguir lidar facilmente com uma grande quantidade de solicitações, foi escolhido o Apache HTTP Server\cite{Apache}.
 
-Para tornar o conteúdo retornado sensível ao contexto se faz necessário utilizar uma linguagem para controlar as respostas. Nesta camada foi usada a linguagem PHP. No entanto, esta linguagem é muito permissiva quando se trata de desenvolvimento WEB, tornando extremamente necessário o uso de um framework. Dessa maneira, foi desenvolvido o Very Simple Rest Framework (nota de rodapé), exclusivamente para este projeto.
+Para tornar o conteúdo retornado sensível ao contexto se faz necessário utilizar uma camada para controlar as respostas. Nesta camada foi usada a linguagem PHP\cite{PHP}. No entanto, pelo fato dessa linguagem ser muito permissiva quando se trata de desenvolvimento WEB, se faz necessário utilizar um framework. Para tal, foi desenvolvido o Very Simple Rest Framework\cite{RestFW}\footnote{O Very Simple Rest Framework foi implementado exclusivamente para auxiliar o desenvolvimento do PrISMA. Nele há a utilização do padrão MVC em conjunto com práticas Restful\cite{Rest}, fazendo assim melhor uso do protocolo HTTP 1.1\cite{HTTP11}.}.
 
-Para a persistência dos dados foi utilizado o banco de dados PostgreSQL. Ele foi escolhido por ser grátis, extremamente poderoso e garantir que não haveria perda de desempenho para diversas requisições simultâneas.
+Para a persistência dos dados foi utilizado o banco de dados relacional PostgreSQL\cite{PostgreSQL}. Ele foi escolhido por ser de código aberto, extremamente poderoso e garantir que não haveria perda de desempenho para diversas requisições simultâneas.
 
-Com este conjunto de ferramentas é possível controlar todas as etapas de uma solicitação web por parte dos alunos, garantindo que seus dados estarão íntegros e seguros.
+Dessa maneira, com este conjunto de ferramentas é possível controlar todas as etapas de uma solicitação web por parte dos alunos, garantindo que seus dados estarão íntegros e seguros.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -185,18 +183,18 @@ Com este conjunto de ferramentas é possível controlar todas as etapas de uma s
 
 Por se tratar de um sistema já implementado, a proposta para este projeto final de curso é de que seja feita a documentação do que já está pronto e a adição de algumas novas funcionalidades. São elas:
 
-\begin{itemize}
+\begin{enumerate}
 
-  \item Como não existe integração do PrISMA com o PUC Online, os alunos precisam realizar a entrada de dados manualmente de um sistema para o outro. Para resolver este problema será então implementada uma exportação de dados, em um formato padronizado, de forma que a PUC aceite. Esta última etapa infelizmente não poderá ser cumprida, por motivos burocráticos.
+  \item Como não existe integração do PrISMA com o PUC Online, os alunos precisam realizar a entrada de dados manualmente de um sistema para o outro. Para resolver este problema será então implementada uma exportação de dados, em um formato padronizado.
 
-  \item Até o momento foi apenas discutida a visão do aluno sobre o sistema. No entanto, serão agregados dados relevantes também àqueles que estão disponibilizando as turmas. Neste caso, estatísticas quanto à ocupação das turmas virão a ser oferecida.
+  \item Até o momento foi apenas discutida a visão do aluno sobre o sistema. No entanto, serão agregados dados relevantes também àqueles que estão regulando a disponibilização das turmas. Neste caso, estatísticas quanto à ocupação parcial das turmas virão a ser oferecidas. Para isso é necessário criar também uma conta especial, que não é de aluno.
 
-  \item Da mesma forma, essas estatísticas podem ser apresentadas aos alunos para que possam ter uma ideia do quão concorrida será aquela vaga. Com isso, estes dados estarão disponíveis na visualização de cada turma.
+  \item Da mesma forma, essas estatísticas podem ser apresentadas aos alunos para que possam ter uma ideia do quão concorrida será aquela vaga. Com isso, estes dados estarão disponíveis na visualização de cada turma. Se trata de uma tarefa diferente por causa da forma como esses dados serão disponibilizados na interface.
 
   \item A cada novo período o PrISMA precisava ser configurado com os dados dos novos alunos, históricos de alunos antigos e novas turmas e disciplinas que serão oferecidas nos próximos períodos. Para isso se faz necessário que esses dados sejam carregados no sistema de alguma maneira. Como atualmente não existe uma interface de controle para este nível de administração, ela será implementada.
-\end{itemize}
+\end{enumerate}
 
-Por ser um sistema não tão pequeno, serão priorizadas as etapas de documentação do projeto. Dessa maneira, por mais que as funcionalidades sugeridas venham a ficar prontas, pelo menos algum outro desenvolvedor poderá continuar de onde foi parado. Dessa forma também será gerado um manual que poderá servir como referência no que se refere a desenvolvimento web, baseado na experiência adquirida.
+Por ser um sistema não tão pequeno, serão priorizadas as etapas de documentação do projeto. Dessa maneira, por mais que as funcionalidades sugeridas venham a ficar prontas, pelo menos algum outro desenvolvedor poderá continuar de onde foi parado. Dessa forma, também será gerado um manual que poderá servir como referência no que se refere a desenvolvimento web, baseado na experiência adquirida.
 
 Concluída a documentação, cada funcionalidade será avaliada e priorizada quanto à sua importância e tempo de implementação. Maximizando assim a proximidade do resultado obtido com a do esperado.
 
