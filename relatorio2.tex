@@ -3,6 +3,7 @@
 \documentclass[graduacao,brazil]{ThesisPUC}
 \usepackage{float}
 \usepackage{enumerate}
+\usepackage[final]{pdfpages}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -12,14 +13,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \autor{Julio Ribeiro da Silva}
-\autorR{Silva, Julio Ribeiro da}
+\autorR{Ribeiro da Silva, Julio}
 \orientador{S\'{e}rgio Lifschitz}
 \orientadorR{Lifschitz, S\'{e}rgio}
 
 \titulo{PrISMA}
 \titulouk{PrISMA}
 \subtitulo{Programa de Instru\c{c}\~{a}o \`{a} Solicita\c{c}\~{a}o de Matr\'{i}cula Acad\^{e}mica}
-\dia{23} \mes{Junho} \ano{2014}
+\dia{19} \mes{Novembro} \ano{2014}
 
 \cidade{Rio de Janeiro}
 \CDD{510}
@@ -57,6 +58,7 @@ E, não menos importante, à todos os alunos da PUC-Rio que utilizaram o PrISMA.
    \chave{Experi\^{e}ncia do usu\'{a}rio}%
    \chave{Aplica\c{c}\~{a}o web}%
    \chave{API REST}%
+   \chave{PrISMA}%
  }
  
  \resumo{
@@ -71,6 +73,7 @@ Na PUC-Rio, no início de cada período os alunos informam quais turmas gostaria
    \chave{User Experience}%
    \chave{Web application}%
    \chave{REST API}%
+   \chave{PrISMA}%
  }
  
  \resumouk{%
@@ -88,7 +91,7 @@ At PUC-Rio, in the beginning of each period students tells which classes they wo
 
 \chapter{Introdução}
 
-As universidades de forma geral adotam modelos muito parecidos para que alguém consiga conquistar um diploma de graduação. Disciplinas obrigatórias, eletivas e algumas outras atividades devem ser cumpridas com sucesso. Como a grade de disciplinas a serem cumpridas é bastante extensa e existe uma série de pré-requisitos necessários a serem cumpridos para aquelas disciplinas mais avançadas, naturalmente demora alguns anos para se conseguir o diploma.
+As universidades de forma geral adotam modelos muito parecidos para que alguém consiga conquistar um diploma de graduação. Disciplinas obrigatórias, eletivas e algumas outras atividades devem ser devidamente cumpridas. Como a grade de disciplinas a serem cumpridas é bastante extensa, e existe uma série de pré-requisitos necessários a serem cumpridos para aquelas disciplinas mais avançadas, naturalmente demora alguns anos para se conseguir o diploma.
 
 Pré-requisitos são restrições impostas às disciplinas com o objetivo de nivelar o conhecimento dos alunos que irão cursá-la. Dessa maneira, é facilitado o trabalho do professor, que por sua vez pode assumir que parte da matéria já faz parte do conhecimento dos alunos. Dessa maneira, período a período, o conjunto de disciplinas que os alunos podem, de fato, cursar é limitado em apenas uma fração delas.
 
@@ -356,7 +359,7 @@ Diversas outras funcionalidades foram implementas, conforme segue:
 	\item Ao clicar em uma célula vazia na tabela de horários, é realizada uma busca pelas turmas que estão sendo disponibilizadas naquele horário clicado.
 	\item Ao clicar em uma turma, na tabela de horários, é realizada uma busca no Micro-Horário pelas demais turmas daquela respectiva disciplina clicada.
 	\item Para exportar o resultado final, basta clicar no botão de download, na aba de disciplinas selecionadas.
-	\item No cabeçalho do sistema são disponibilizados FAQ, um vídeo com explicação do sistema (que pode ser acessado neste << link >>) e uma área para feedbacks.
+	\item No cabeçalho do sistema são disponibilizados FAQ, um \href{https://www.youtube.com/watch?v=XHF8WOJ6xI0}{vídeo} com explicação do sistema e uma área para feedbacks.
 
 \end{itemize}
 
@@ -377,7 +380,7 @@ A solução é baseada em uma aplicação Web. Isto é, existe um servidor com o
 
 O servidor utilizado para hospedar o projeto foi disponibilizado pelo Sérgio Lifschitz que, com a ajuda do suporte do Departamento de Informática (principalmente o Anderson Oliveira da Silva), foi relacionado com o domínio “prisma.inf.puc-rio.br”. A configuração utilizada no servidor foi a distribuição TurnKey, com servidor Apache, servidor PostgreSQL e pacotes para que seja possível a execução de scripts em PHP. Na configuração final fez-se uso de SSL, sem a disponibilidade de certificado validado por Autoridade Certificadora.
 
-Todo código gerado foi versionado utilizando-se GIT e hospedado na plataforma GitHub, conforme pode ser acessado pelo link: << Link >>https://github.com/PrismaDev/prisma. Sendo open-source, todos podem contribuir, usar como referência ou mesmo reutilizar projeto como um todo.
+Todo código gerado foi versionado utilizando-se GIT e hospedado na plataforma \href{https://github.com/PrismaDev/prisma}{GitHub}. Sendo open-source, todos podem contribuir, usar como referência ou mesmo reutilizar projeto como um todo.
 
 O padrão MVC (Model-view-controller) foi utilizado duas vezes na implementação do sistema. Uma no lado do servidor (back-end), outra no lado do aplicativo que é executado no navegador (front-end). A comunicação entre essas duas camadas se dá por intermédio dos respectivos controllers, utilizando requisições dinâmicas e o formato JSON para transmissão dos dados.
 
@@ -677,18 +680,39 @@ Na pasta “<root>/Public” estão as pastas “css”, “js” e “img”, q
 
 \chapter{Resultado}
 
-TODO
+Fazer parte do desenvolvimento do PrISMA foi um grande prazer, e é motivo de muito orgulho, dado que foi utilizado como base para o novo sistema do PUC Online.
+
+A primeira versão do prisma disponibilizada foi disponibilizada nos primeiros e segundos semestres de 2011 e 2012. A segunda versão foi disponibilizada nos primeiros e segundos semestres de 2013 e apenas no primeiro semestre de 2014. Quando a PUC-Rio parou de oferecer suporte por entender que o sistema não era mais necessário, por conta do novo sistema desenvolvido pela equipe do SAU, par o PUC Online.
+
+O PrISMA foi utilizado, em média, por 1500 alunos em um único período, chegando ao pico de 2400, no segundo semestre do ano de 2013. Isto é, entre 10\% e 20\% dos total de alunos da PUC-Rio. Segundo o Washington Brava, diretor do DAR, foi notada uma sutil melhora na qualidade das solicitações realizadas.
+
+Em suma, este sistema se demonstrou bastante útil para o planejamento da vida acadêmica dos alunos de graduação. E, por se tratar de um problema tão difícil de ser resolvido, que teve que ser contornado por meio diversas ferramentas de apoio, o resultado se demonstra bastante positivo.
+
 
 \chapter{Trabalhos futuros}
 
-TODO
+Conforme foi visto, o sistema desenvolvido teve uma excelente aceitação, mas algumas funcionalidades ainda podem ser adicionadas.
 
+A primeira delas é a integração oficial com o sistema do PUC Online, de forma que o aluno não precise se planejar em um ambiente, e entrar com os dados oficialmente em outro.
+
+Atualmente, para cada período novo, alguns cuidados devem ser tomados na hora de importar os dados. Se faz necessário a criação de uma página de administrador, onde seria possível avaliar todo o comportamento do sistema, assim como inserir e remover usuários que não sejam alunos.
+
+As estatísticas estão devidamente implementadas, mas poderiam ser melhor direcionadas para quem está visualizando. Neste caso, deveria haver conta de coordenador de departamento, que teria acesso à todos os dados referentes aos seus cursos.
+
+Deveria ser possível adicionar e remover turmas diretamente no PrISMA, enquanto está sendo utilizado pelos alunos. Essa necessidade que aparece naturalmente ao visualizar as estatísticas e constatar que a oferta de turmas não condiz com a demanda.
+
+No mesmo contexto do problema dos alunos, diversas ferramentas poderiam ser utilizadas para auxiliar o coordenador na hora de organizar as turmas a serem oferecidas. Da mesma forma, poderia haver um mapeamento de salas e disponibilidades de professores, assim como as disciplinas que podem ser ministradas por eles.
+
+E, para finalizar, resolver pequenos problemas de implementação e refinar as funcionalidades já implementadas.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \arial
 \nocite{*}
-\bibliography{relatorio1}
+\bibliography{relatorio2}
 
 \normalfont
+
+% \appendix
+% \includepdf[pages=-]{ArtigoLuiza.pdf}
 
 \end{document}
