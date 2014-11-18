@@ -1,5 +1,5 @@
 LIBDIR=./lib/
-TARGET=relatorio1
+TARGET=relatorio2
 
 .phony: all open clean
 
