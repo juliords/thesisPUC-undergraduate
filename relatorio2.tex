@@ -127,17 +127,17 @@ Por mais que a última versão do PUC Online tenha mudado conceitualmente, o PrI
 
 A PUC-Rio tem a sua própria forma de organizar a inscrição dos alunos nas turmas, o que mudou desde a primeira versão do PrISMA. No entanto, alguns conceitos permanecem.
 
-O principal conceito é o de ranking de alunos. Esse ranking é necessário na hora de dizer quais que tem prioridades na hora de escolher determinada turma. Ele é definido a partir das informações de C.R. (coeficiente de rendimento) acumulado e da quantidade de créditos totais cumpridos, referentes à todos os períodos.
+O principal conceito é o de ranking de alunos. Esse ranking é necessário na hora de dizer quais alunos têm prioridade na hora de escolher determinada turma. Ele é definido a partir das informações de C.R. (coeficiente de rendimento) acumulado e da quantidade de créditos totais cumpridos, em relação à todos os períodos.
 
-Dessa forma, dificilmente os alunos melhores classificados não terão suas solicitações atendidas. No entanto, os demais devem estar cientes da sua condição e se planejar melhor ainda, o que não é o que acontece. A consequência disso acaba se refletindo em horários e professores mais concorridos, que aqueles de menor ranking não conseguem ser atendidos e acabam ficando com suas agendas muito longe do ideal.
+Dificilmente os alunos melhores classificados não terão suas solicitações atendidas. Mas os demais devem estar cientes da sua condição e serem mais cautelosos ainda nos seus planejamentos. Quando isso não acontece, solicitando turmas muito concorridas, por conta de preferência de horários ou de professores, dificilmente suas solicitações serão atendidas, afastando ainda mais o resultado esperado do real alcançado.
 
-Abaixo será explicado como funcionava a versão antiga do PUC Online, que era a utilizada quando se começou a implementar o PrISMA, inclusive a última versão. E como funciona atualmente a última versão, que está bem mais parecido com a última versão do sistema.
+Abaixo será explicado como funcionava a versão antiga do PUC Online, que era a utilizada quando se começou a implementar o PrISMA, e como funciona atualmente a última versão, que está bem mais parecido com a última versão do sistema.
 
-Vale notar que apenas a primeira etapa de matrícula será abordada neste relatório por ser o foco do problema. Mas nada impede que o PrISMA também seja utilizado nas demais etapas como forma de auxílio.
+Vale notar que apenas a primeira etapa de matrícula será abordada neste relatório por ser o foco do problema. Mas nada impede que o PrISMA também seja utilizado nas demais etapas como ferramenta de auxílio.
 
 \section{PUC Online Antigo}
 
-O sistema antigo para entrada dos dados era composto apenas por uma tela e, basicamente, uma tabela. As três colunas representam a primeira, segunda e terceira opção escolhas e as linhas as escolhas de turmas em si. E em cada célula é possível entrar com qualquer turma que se desejar, mesmo que não seja possível ser cursada.
+O sistema antigo para entrada dos dados era composto apenas por uma tela e, basicamente, uma tabela. As três colunas representam a primeira, segunda e terceira opção de escolhas e as linhas as escolhas de turmas em si. E em cada célula é possível entrar com qualquer turma, mesmo que não seja possível ser cursada.
 
 \begin{figure}[H]
     \centering
@@ -180,24 +180,24 @@ A ordem de processamento do algoritmo utilizado sobre a tabela é a seguinte:
 
 	\end{enumerate}
 
-	\item Retorna ao passo 2 e repete o processo, até que acabem as disciplinas ou se atinja a quantidade máxima de créditos que pode ser cursada no período.
+	\item Retorna ao passo 2 e repete o processo, até que acabem as disciplinas ou atinja a quantidade máxima de créditos que pode ser cursada no período.
 
 \end{enumerate}
 
 Como é possível perceber, por exemplo, se uma turma na primeira opção for devidamente atendida, todas aquelas que estão listadas nas próximas opções na linha corrente serão ignoradas. Um problema causado por esse comportamento está quando o aluno não entende corretamente o conceito de opção e coloca todas as turmas a serem solicitadas na mesma linha, mesmo quando elas não têm relação alguma.
 
-Outro problema se encontra na prioridade natural entre as linhas da tabela de solicitação, provocando, muitas das vezes, consequências não planejadas. Por exemplo, caso na primeira linha seja escolhida a segunda opção que, por acaso, se encontra no mesmo horário da primeira opção da linha debaixo, não será possível se cadastrar nessa última por conta de horário já preenchido.
+Outro problema se encontra na prioridade natural entre as linhas da tabela de solicitação, provocando, muitas das vezes, consequências indesejadas. Por exemplo, caso na primeira linha seja escolhida a segunda opção que, por acaso, se encontra no mesmo horário da primeira opção da linha debaixo, não será possível se cadastrar nessa última por conta de horário já preenchido.
 
-Esse é um tipo de cascata que torna o correto preenchimento dessa tabela um desafio a parte, principalmente para aqueles que não estão muito bem classificados segundo o ranking da PUC. Aqueles que estão melhor classificados não precisam nem preencher as demais opções, bastando preencher o primeiro campo de cada linha que na grande maioria das vezes não terão problemas.
+Esse é um tipo de cascata que torna o correto preenchimento dessa tabela um grande desafio, principalmente para aqueles que não estão muito bem classificados segundo o ranking da PUC. Aqueles que estão melhor classificados não precisam nem preencher as demais opções. Preencher o primeiro campo de cada linha que na grande maioria das vezes não trará problemas.
 
-Nesta primeira etapa, esse sistema ficava aberto por um determinado tempo para que todos os alunos pudessem se organizar e realizar suas solicitações. Durante esse tempo, nenhuma ferramenta de auxilio era oferecida, forçando o aluno a buscar as turmas que estava sendo oferecidas em lugar (chamado de Micro-Horário), a lista de disciplinas que devem ser cursadas (chamada de Falta-Cursar) em outro, a ementa e pré-requisitos referente a cada disciplina em outro, para então realizar a solicitação neste último. Muito trabalho que, por mais importante que fosse, nem todos se despunham a ter.
+Nesta primeira etapa, esse sistema ficava aberto por um determinado tempo para que todos os alunos pudessem se organizar e realizar suas solicitações. Durante esse tempo, nenhuma ferramenta de auxilio era oferecida, forçando o aluno a buscar as turmas que estava sendo oferecidas em lugar (chamado de Micro-Horário), a lista de disciplinas que devem ser cursadas (chamada de Falta-Cursar) em outro, a ementa e pré-requisitos referente a cada disciplina em outro, para então realizar a solicitação em um último lugar diferente dos demais. Muito trabalho que, por mais importante que fosse, nem todos se despunham a ter.
 
-Após a primeira etapa, executava-se o algoritmo exposto acima e divulgava-se o resultado final para cada aluno. Inclusive críticas simples que podem ter sido feito anteriormente, como checagem de pré-requisitos. Passando assim para as próximas etapas de ajuste que não serão abordados nesse relatório.
+Após a primeira etapa, executava-se o algoritmo exposto acima e divulgava-se o resultado final para cada aluno. Inclusive críticas simples que podem ter sido feito anteriormente, como checagem de pré-requisitos, só eram feitas após o processamento final. As próximas etapas de ajuste que não serão abordados nesse relatório.
 
 
 \section{PUC Online Novo}
 
-Recentemente o SAU liberou a nova versão do seu sistema de solicitação de disciplinas. Não apenas o sistema em si, como o modelo utilizado como um todo também foi modificado.
+Recentemente a equipe do SAU (Sistema Acadêmico Universitário) liberou a nova versão do seu sistema de solicitação de turmas. Não apenas o sistema, mas o modelo utilizado como um todo também foi modificado.
 
 \begin{figure}[H]
     \centering
@@ -205,15 +205,15 @@ Recentemente o SAU liberou a nova versão do seu sistema de solicitação de dis
     \caption{Interface nova do PUC Online.}
 \end{figure}
 
-Agora, ao invés de ter um tempo em que todos os alunos podem entrar no sistema de uma única vez, e ao final do prazo o sistema fazer o processamento e dizer quais solicitações foram de fato atendidas, agora o sistema mudou para a solicitação em tempo real. Agora cada grupo de alunos é alocado em uma janela de horários de 2 horas para que possa fazer sua solicitação, em uma interface parecida com a última versão do PrISMA.
+Ao invés de ter uma janela de tempo em que todos os alunos podem entrar no sistema de uma única vez, e ao final do prazo o sistema fazer o processamento e dizer quais solicitações foram de fato atendidas, agora cada grupo de alunos é alocado em uma janela de horários de 2 horas para que possa fazer sua solicitação, em uma interface de entrada de dados parecida com a última versão do PrISMA. Esse sistema é chamado de Matrícula em Tempo Real.
 
-A grande vantagem é que uma vez selecionada a turma, o aluno já estará matriculado e com a sua vaga garantida. Podendo assim tentar todas as possibilidades na mesma hora que estiver se planejando. Ou seja, nesse no decorrer dessa etapa as turmas já estarão sendo preenchidas e, os próximos alunos a acessarem o sistema, que tem menor prioridade, já terão sua gama de escolha reduzida.
+A grande vantagem é que uma vez selecionada a turma, o aluno já estará matriculado e com a sua vaga garantida. Podendo assim tentar todas as possibilidades na mesma hora que estiver se planejando. Ou seja, no decorrer dessa etapa as turmas já estarão sendo preenchidas e, os próximos alunos a acessarem o sistema, que tem menor prioridade, já terão seu conjunto de escolha de disciplinadas reduzido.
 
-Uma grande desvantagem está no fato de que cada aluno tem uma janela de horário muito curta para acessar o sistema. Caso ele perca seu horário, no final do seu respectivo dia ele pode acessar novamente, mas terá sua prioridade reduzida, pois alunos com prioridade menores já terão acessado o sistema.
+Uma grande desvantagem está no fato de que cada aluno tem uma janela de tempo muito curta para acessar o sistema. Caso ele perca seu horário, no final do seu respectivo dia ele pode acessar novamente, mas terá sua prioridade reduzida, pois alunos com prioridades menores já terão acessado o sistema.
 
-Quanto ao sistema em si, foi uma grande evolução. Agora todos os dados necessários à matrícula são apresentados no mesmo lugar. Isto é, é possível verificar quais disciplinas que deve-se cursar para completar o curso (Falta-Cursar), assim como procurar por toda as turmas que estão sendo oferecidas no período de maneira muito simples, inclusive clicando nas células na tabela de horários na esquerda, procurando assim por pelo respectivo horário. Da mesma forma que foi modelado no PrISMA.
+No entanto, esse novo sistema foi uma grande evolução. Agora todos os dados necessários à matrícula são apresentados no mesmo lugar. Isto é, é possível verificar quais disciplinas que deve-se cursar para completar o curso (Falta-Cursar), assim como procurar por toda as turmas que estão sendo oferecidas no período de maneira muito simples, inclusive clicando nas células na tabela de horários na esquerda, procurando assim por turmas naquele respectivo horário. Da mesma forma que foi modelado na última versão do PrISMA.
 
-No entanto, esse sistema para entrada de dados por mais intuitivo e fácil de usar que seja, não pode ser acessado antes da janela de horário disponibilizada ao aluno, eliminando assim o seu poder para o plenajamento do aluno. Dessa forma, por mais que o PrISMA atual esteja modelado para trabalhar com o sistema antigo do PUC Online, ele continua sendo extremamente útil na etapa de planejamento do aluno, anterior à primeira etapa de matrícula.
+Mas esse novo sistema por mais intuitivo e fácil de usar que seja, não pode ser acessado antes da janela de horário disponibilizada ao aluno, eliminando assim o seu poder para o plenejamento. Dessa forma, por mais que o PrISMA atual esteja modelado para trabalhar com o sistema antigo do PUC Online, ele continua sendo extremamente útil na etapa anterior à primeira etapa de matrícula.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
