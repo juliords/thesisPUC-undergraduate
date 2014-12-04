@@ -3,7 +3,9 @@
 \documentclass[graduacao,brazil]{ThesisPUC}
 \usepackage{float}
 \usepackage{enumerate}
+\usepackage{listings}
 \usepackage[final]{pdfpages}
+\usepackage{mathtools}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -211,33 +213,31 @@ A grande vantagem é que uma vez selecionada a turma, o aluno já estará matric
 
 Uma grande desvantagem está no fato de que cada aluno tem uma janela de tempo muito curta para acessar o sistema. Caso ele perca seu horário, no final do seu respectivo dia ele pode acessar novamente, mas terá sua prioridade reduzida, pois alunos com prioridades menores já terão acessado o sistema.
 
-No entanto, esse novo sistema foi uma grande evolução. Agora todos os dados necessários à matrícula são apresentados no mesmo lugar. Isto é, é possível verificar quais disciplinas que deve-se cursar para completar o curso (Falta-Cursar), assim como procurar por toda as turmas que estão sendo oferecidas no período de maneira muito simples, inclusive clicando nas células na tabela de horários na esquerda, procurando assim por turmas naquele respectivo horário. Da mesma forma que foi modelado na última versão do PrISMA.
+Esse novo sistema foi uma grande evolução. Agora todos os dados necessários à matrícula são apresentados no mesmo lugar. Isto é, é possível verificar quais disciplinas que deve-se cursar para completar o curso (Falta-Cursar), assim como procurar por toda as turmas que estão sendo oferecidas no período de maneira muito simples, inclusive clicando nas células na tabela de horários na esquerda, procurando assim por turmas naquele respectivo horário. Da mesma forma que foi modelado na última versão do PrISMA.
 
-Mas esse novo sistema por mais intuitivo e fácil de usar que seja, não pode ser acessado antes da janela de horário disponibilizada ao aluno, eliminando assim o seu poder para o plenejamento. Dessa forma, por mais que o PrISMA atual esteja modelado para trabalhar com o sistema antigo do PUC Online, ele continua sendo extremamente útil na etapa anterior à primeira etapa de matrícula.
+No entanto, por mais intuitivo e fácil de usar que seja, não pode ser acessado antes da janela de horário disponibilizada ao aluno, eliminando assim o seu poder para o plenejamento. Dessa forma, por mais que o PrISMA atual esteja modelado para trabalhar com o sistema antigo do PUC Online, ele continua sendo extremamente útil na etapa anterior à primeira etapa de matrícula.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Solução proposta}
 
-Com isso propõe-se o PrISMA. Um sistema Web que começou a ser desenvolvido no segundo semestre do ano de 2010, para disciplina de Banco de Dados I, ministrada pelo meu atual coordenador, Sérgio Lifschitz.
+Com isso propõe-se o PrISMA. Um sistema Web que começou a ser desenvolvido no segundo semestre de 2010, para disciplina de Banco de Dados I, ministrada pelo meu atual coordenador, Sérgio Lifschitz.
 
-Antes que existisse qualquer sistema de apoio à solicitação de matrícula, eu e alguns amigos já utilizávamos o Excel para nos organizarmos. Era montada uma tabela de horários semanais, ao lado de uma lista de turmas, relacionadas com as suas respectivas disciplinas, horários e professores. Dessa forma, manualmente, as combinações iam sendo feitas na própria planilha, até que o horário que melhor atendesse fosse encontrado.
+Antes de existir qualquer sistema de apoio à solicitação de matrícula, eu e alguns amigos já utilizávamos o Excel para nos planejarmos. Era montada uma tabela de horários semanais e ao lado de uma lista de turmas, relacionadas com as suas respectivas disciplinas, horários e professores. Dessa maneira, manualmente, as combinações iam sendo feitas na própria planilha, até que fosse encontrado o horário que melhor atendesse a todos.
 
-E essa foi a principal motivação do sistema como um todo. Uma página Web, que poderia ser acessada a qualquer momento, inclusive no meio do período letivo, onde o aluno teria todos os seus dados a mão para que pudesse se planejar melhor. Da mesma maneira, seriam oferecidas diversas funcionalidades para que todo o processo fique mais simples.
+Essa foi a principal motivação do sistema. Uma página Web que poderia ser acessada a qualquer momento, inclusive durante o período letivo, onde o aluno teria todos os seus dados à mão para que pudesse se planejar mais facilmente. Isto é, seriam oferecidas diversas funcionalidades para que todo o processo fique mais simples.
 
-Por outro lado, esse sistema seria de grande interesse para a universidade, dado que também poderia ser utilizado pelos coordenadores de departamentos, que gerenciam a disponibilidade de turmas e professores, a terem indicadores com maior confiança quanto à demanda por disciplinas, horários e professores específicos, podendo atender assim a mais alunos.
+Da mesma maneira, esse sistema seria de grande interesse para a universidade, já que poderia ser utilizado pelos coordenadores de departamentos, que gerenciam a disponibilidade de turmas e professores, oferecendo indicadores com maior confiança quanto à demanda por disciplinas, horários e professores específicos, podendo atender assim a mais alunos.
 
-Indo um pouco mais além, poderia haver um acompanhamento do desempenho dos alunos durante o semestre, avaliando estatisticamente sua probabilidade de conclusão das disciplinas e de quais ele poderá, ou teria interesse, de cursar no próximo semestre. Dessa forma, seria mais um indicador de demanda para os coordenadores. No entanto, essa seria uma funcionalidade que necessitaria de grande integração com o sistema atual da PUC-Rio.
-
-Vale ressaltar que toda modelagem aqui abordada foi feita referenciando sempre o sistema do PUC Online, onde é feita a matrícula. No entanto, nada impede que as mesmas ideias sejam utilizadas em contextos de outras universidades.
+Indo um pouco além, poderia haver um acompanhamento do desempenho dos alunos durante todo o semestre, avaliando estatisticamente sua probabilidade de conclusão das disciplinas e de quais ele poderá, ou teria interesse, de cursar no próximo semestre. Esse seria mais um indicador de demanda para os coordenadores. No entanto, essa funcionalidade necessitaria de grande integração com o sistema atual da PUC-Rio.
 
 
 \section{Versão alpha}
 
-Essa versão se refere àquela entregue como projeto final da disciplina de Banco de Dados I. Os dados aqui utilizados foram cedidos pelos próprios integrantes do grupo que apresentou este trabalho.
+Essa versão se refere àquela entregue como projeto final da disciplina de Banco de Dados I. Os dados utilizados aqui foram cedidos pelos próprios integrantes do grupo que apresentou este trabalho.
 
-O sistema era composto basicamente por duas telas. Na primeira era apresentada uma lista com todas as disciplinas pertencentes ao fala-cursar do aluno. Da mesma maneira, visando desde já facilitar a facilidade no acesso às informações, cada disciplina acompanhava a referência para sua página oficial, onde é possível verificar sua ementa e pré-requisitos.
+O sistema era composto por duas telas. Na primeira era apresentada uma lista com todas as disciplinas pertencentes ao fala-cursar do aluno. Visando facilitar o acesso às informações, cada disciplina era acompanhada de um link para sua página oficial no site da PUC-Rio, onde é possível verificar sua ementa e pré-requisitos.
 
 \begin{figure}[H]
     \centering
@@ -245,7 +245,7 @@ O sistema era composto basicamente por duas telas. Na primeira era apresentada u
     \caption{Primeira tela da primeira versão.}
 \end{figure}
 
-Na segunda tela do sistema, todas as turmas daquelas disciplinas selecionadas são carregadas automaticamente, preenchendo tanto a tabela de horários quanto a lista de disciplinas. Também é possível adicionar mais disciplinas, em caso de eletivas por exemplo, através do código no campo logo abaixo da lista de disciplinas, no canto inferior direito.
+Na segunda tela do sistema, todas as turmas daquelas disciplinas selecionadas anteriormente são carregadas de forma automática, preenchendo tanto a tabela de horários quanto a lista de disciplinas. Também é possível adicionar mais disciplinas, em caso de eletivas por exemplo, através do código no campo logo abaixo da lista de disciplinas, no canto inferior direito.
 
 \begin{figure}[H]
     \centering
@@ -253,24 +253,24 @@ Na segunda tela do sistema, todas as turmas daquelas disciplinas selecionadas s�
     \caption{Segunda tela da primeira versão.}
 \end{figure}
 
-Cada célula da tabela que apresentasse um campo de seleção significava que uma turma das disciplinas selecionadas pode vir a ocupar aquele horário. Ao clicar no campo de seleção e selecionar a turma desejada para aquele horário, na respectiva disciplina, na lista de disciplinas lateral, o campo de seleção de turma daquela disciplina específica também será atualizado.
+Cada célula, que representa invividualmente um horário, que possuir um campo de seleção contém turmas que podem ocupar aquele horário. Ao selecionar uma turma, as células que representam os demais horários daquela turma também serão atualizados, caso não estejam ocupadas. Da mesma maneira, na lista de disciplinas, o campo de seleção de turmas para a disciplina da turma selecionada anteriormente será atualizada.
 
-Quando uma turma selecionada colide em horário com outra turma previamente selecionada, o sistema não deixa a operação ser concluída, avisando o ocorrido. Da mesma forma, caso uma turma referente a uma disciplina tiver sido selecionada, quando outra turma dessa mesma disciplina já tiver sido previamente selecionada, o sistema impedirá a operação, notificando o ocorrido.
+Quando uma turma selecionada colide em horário com outra turma previamente selecionada, o sistema não deixa a operação ser concluída, avisando o ocorrido. Caso uma turma referente a uma disciplina tiver sido selecionada, quando outra turma dessa mesma disciplina já tiver sido previamente selecionada, o sistema também impedirá a operação, notificando o ocorrido.
 
-Dessa forma, disciplinas podem ser adicionadas e removidas dinamicamente. Turmas podem ser combinadas a vontade, descrevendo exatamente aquele comportamento previamente citado que era realizado no Excel.
+Disciplinas podem ser adicionadas e removidas dinamicamente e turmas podem ser combinadas a vontade, remetendo exatamente àquele comportamento que era realizado no Excel, mas agora em uma página Web.
 
-No entanto, já nesta versão, visando auxiliar o aluno no primeiro momento do seu planejamento, era oferecido a funcionalidade de preencher a tabela automaticamente. Neste caso, trata-se de um algoritmo guloso que tenta encaixar todas as turmas de todas as disciplinas, uma a uma, até que nenhuma colida em horário, nem se repita disciplina. Ou seja, a primeira combinação encontrada que atenda esses requisitos era apresentada como solução.
+Já nesta versão, visando auxiliar o aluno no primeiro momento do seu planejamento, era oferecido a funcionalidade de preencher a tabela automaticamente. Neste caso, trata-se de um algoritmo guloso que tenta encaixar todas as turmas de todas as disciplinas, uma a uma, até que nenhuma colida em horário, nem se repita disciplina. Ou seja, a primeira combinação encontrada que atenda esses requisitos é apresentada como solução.
 
-Em suma, já nesta versão os alunos têm todos os dados a mão e uma rápida e clara visualização de como as turmas estão sendo combinadas. Levando em consideração, inclusive, algumas críticas mais básicas, como conflitos de horários entre turmas e repetição de turmas de uma mesma disciplina.
+Concluindo, aqui os alunos têm todos os dados a mão e uma rápida e clara visualização de como as turmas estão sendo combinadas. Levando em consideração, inclusive, algumas críticas mais básicas, como conflitos de horários entre turmas e repetição de turmas de uma mesma disciplina. No entanto, diferentes opções e críticas mais avançadas ainda não estão sendo tratadas.
 
 
 \section{Versão beta}
 
-Esta versão se trata de uma atualização daquela exposta anteriormente. Desta vez disponível para utilização por parte de todos os alunos da universidade.
+Esta é uma atualização da versão exposta anteriormente que, desta vez, foi disponibilizada para todos os alunos da universidade.
 
-Para isso, foi necessário desenvolver os demais itens que cercam a funcionalidade principal. O principal deles se trata do controle de acesso e carregamento dos dados de cada aluno no sistema.
+Para tornar acessível a todos foi necessário desenvolver os demais itens que cercam a funcionalidade principal. Os principais deles são: controle de acesso e carregamento dos dados de cada aluno no sistema.
 
-Infelizmente, naquela época, não foi possível realizar a importação dos dados diretamente do SAU. No entanto, foi disponibilizada uma nova funcionalidade no PUC Online que permitiu baixar em um arquivo todos os dados necessários pelo PrISMA, de forma que, com esse arquivo pudesse ser verificada a autenticidade de quem emitiu, no caso o PUC Online, e assim permitir o cadastro dos alunos no PrISMA. Conforme pode ser visto na imagem que segue.
+Infelizmente, naquela época, não foi possível realizar a importação dos dados diretamente do sistema da PUC-Rio. No entanto, foi disponibilizada no PUC Online uma nova funcionalidade que permite baixar em um arquivo todos os dados necessários pelo PrISMA, de forma que, com esse arquivo pudesse ser verificada a autenticidade de quem emitiu, no caso o PUC Online, e assim permitir o cadastro dos alunos no PrISMA. Conforme pode ser visto na imagem que segue.
 
 \begin{figure}[H]
     \centering
@@ -278,9 +278,9 @@ Infelizmente, naquela época, não foi possível realizar a importação dos dad
     \caption{Tela de cadastro.}
 \end{figure}
 
-Esse arquivo contém apenas o falta-cursar do aluno. Ainda não tinha acesso ao histórico, para que pudesse verificar os pré-requisitos das disciplinas. Assim como também não se tinha a informação de quais disciplinas estavam sendo cursadas no momento, para que pudesse avisar o usuário na interface do sistema.
+Esse arquivo contém apenas o falta-cursar do aluno. Ainda não tinha acesso ao histórico, para que pudesse verificar os pré-requisitos das disciplinas. Assim como também não se tinha a informação de quais disciplinas estavam sendo cursadas no momento, para que pudesse informar ao usuário na interface do sistema.
 
-Após feita autenticação no sistema, abre-se então a página principal. Nela é possível selecionar um dos 3 modos de operação do sistema (na última versão deste sistema esses modos não estavam funcionando corretamente).
+Após feita autenticação, abre-se então a página principal. Nela é possível selecionar um dos 3 modos de operação do sistema. Nesta última versão apenas um foi disponibilizado por conta de problemas nos outros dois.
 
 \begin{figure}[H]
     \centering
@@ -714,7 +714,129 @@ E, para finalizar, resolver pequenos problemas de implementação e refinar as f
 
 \normalfont
 
-% \appendix
-% \includepdf[pages=-]{ArtigoLuiza.pdf}
+\appendix
+\chapter{Análise de complexidade}
+
+Nesta seção será discutido sobre a complexidade do problema de decisão trabalhado pelo PrISMA. Este artigo foi escrito pela Luiza de Noronha, orientada pelo professor Sérgio Lifschitz.
+
+\section{Definição do problema}
+
+(...) podemos especificar com mais precisão o problema geral que deve ser resolvido:
+
+\vspace{3 mm}
+\textit{Dada uma lista L de turmas e um conjunto M de matérias que o aluno deseja cursar, busca-se retornar uma grade de disciplinas e horários para o aluno válida que utiliza um subconjunto de M com a maior cardinalidade possível.}
+\vspace{3 mm}
+
+\section{Versão do problema de decisão}
+
+A primeira concepção, que deu origem ao sistema PrISMA, era a versão de decisão do problema de otimização apresentado anteriormente, ou seja, dado um grupo de matérias, ela retornava uma solução que envolvia todas as matérias selecionadas pelo aluno ou dizer que não era possível combinar todas. Mais precisamente:
+
+\vspace{3 mm}
+\textit{Dada a lista de turmas disponíveis para cada matéria T e uma lista de matérias distintas L, gostaríamos de saber se é possível formar uma grade escolhendo exatamente uma turma ofertada para cada matéria em L.}
+\vspace{3 mm}
+
+Dado um conjunto de turmas P, é possível conferir se P é solução para nosso problema da seguinte forma:
+
+\begin{itemize}
+	\item Primeiramente é preciso verificar se todas as matérias das turmas escolhidas são distintas, o que pode ser feito com um algoritmo O($|P|^2$) simples, comparando cada matéria com todas as outras;
+	\item Em seguida, é necessário checar se nenhum horário colide em P, o que também pode ser feito par a par com um algoritmo O($|P|^2$);
+	\item Uma vez de posse de uma possível grade, basta verificar se trata-se de uma grade que contém todas as matérias da lista L, o que pode ser feito em O($|P|*|L|$), fazendo comparações par a par entre L e P;
+\end{itemize}
+
+Com todos os passos da verificação da solução resolvidos em tempo polinomial,possível conjecturar que nosso problema na prática pertence à classe NP.
+
+A primeira observação trivial para esse problema é que não é necessário considerar as turmas das matérias (ou disciplinas) que não estão na lista L. Além disso, também é útil separar as turmas por matéria pois, segundo as restrições dadas, precisaremos pegar exatamente um elemento de cada conjunto.
+
+A solução exponencial que segue é bastante natural: escolha uma turma qualquer da primeira matéria e tente todas as soluções possíveis que a incluam na grade. Se nenhuma solução for válida, tente a próxima matéria, até terminar o conjunto. Se isso acontecer, a resposta para nosso problema de decisão é não, caso contrário, sim.
+
+Encontrar todas as soluções incluindo uma turma específica é o mesmo que resolver o problema para o conjunto sem considerar essa turma, mas verificando se as turmas inseridas não colidem com as turmas já selecionadas pelo algoritmo para montar a grade. Cabe observar que uma solução vazia, caso base dessa recursão, é sempre válida. A prova de correção desta solução é imediata também já que, no pior caso, ela tenta todas as possibilidades do conjunto de possíveis soluções.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{img/algoritmo_grade.png}
+    \caption{Solução exponencial.}
+\end{figure}
+
+Notar que essa solução, por testar todas as possibilidades, tem complexidade igual ao produtório do número de turmas de cada matéria da lista, o que faz com seja potencialmente pouco eficiente se a lista for muito grande ou uma matéria tiver muitas possibilidades de turmas.
+
+Uma pequena otimização que melhora bastante o caso médio do algoritmo é ordenar as matérias pelo número de turmas, em ordem ascendente. Isso diminui o branching factor do algoritmo, mas não diminui a complexidade. Cabe observar que, mesmo assim, a versão implementada (no caso, foi feito em JavaScript), tinha boa performance média na prática, para as solicitações de alunos testadas.
+
+\section{Versão do problema de otimização}
+
+Com o sistema já em produção e sendo utilizado pelos alunos da PUC-Rio, foi decidido que a abordagem de solução do problema deveria ser mudada. Ao invés de retornar uma grade com todas as matérias, o objetivo deveria ser retornar uma grade que maximizasse o número de matérias utilizadas na grade final. Reformulando:
+
+\vspace{3 mm}
+\textit{Dada a lista de turmas disponíveis para cada matéria T e uma lista de matérias distintas L, montar uma grade máxima, ou seja, uma grade tenha o maior número de matérias possível.}
+\vspace{3 mm}
+
+É imediato perceber que, para essa abordagem, sempre existirá uma grade não-vazia se alguma das matérias em L tiver pelo menos uma turma em T, já que com apenas uma turma não há colisões.
+
+A partir do algoritmo discutido anteriormente para a solução do problema de decisão para um determinado conjunto de matérias, é possível considerar um algoritmo que, para cada um dos subconjuntos da lista de matérias L, execute o algoritmo anterior guardando-se o subconjunto máximo para o qual o algoritmo respondeu "SIM".
+
+Uma maneira de otimizar o tempo médio do algoritmo e simplificar a implementação é começar com o conjunto completo, para em seguida considerar todos os conjuntos que têm um elemento a menos. Isso permite que uma vez o algoritmo tenha respondido “SIM” para algum conjunto, o processo possa ser finalizado, já todas as possibilidades melhores que aquele conjunto já foram testadas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{img/algoritmo_grade_maxima.png}
+    \caption{Solução alternativa.}
+\end{figure}
+
+Esse algoritmo é mencionado aqui por questão de completitude, já que ele multiplica a complexidade do algoritmo anterior, que já era alta, pelo número de subconjuntos do conjunto das matérias, tornando-o impraticável. Assim, podemos reformular uma vez mais nosso problema:
+
+\vspace{3 mm}
+\textit{Dada a lista de turmas disponíveis no período de interesse L e o conjunto de matérias que o aluno deseja fazer T, é possível fazer uma lista S que contém somente turmas listadas em L de matérias contidas em T.}
+\vspace{3 mm}
+
+A partir da lista de turmas S, podemos montar um grafo da seguinte forma: cada turma é representada por um vértice e turmas incompatíveis têm arestas entre si – lembrando que turmas incompatíveis são turmas da mesma matéria cujos horários conflitam.:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{img/independentset.png}
+    \caption{Grafo de incompatibilidades.}
+\end{figure}
+
+Este grafo foi gerado tomando como exemplo os seguintes códigos de disciplinas (MAT1161, FIS1031, CRE1127 e LET1920) e as turmas respectivas, ilustrado a seguir:
+
+\begin{itemize}
+	\item MAT1161:
+	\begin{itemize}
+		\item 33A: seg 13-15, qua 13-15
+		\item 33B: seg 11-13, ter 15-17
+		\item 33C: seg 7-9, qui 9-11
+	\end{itemize}
+
+	\item FIS1031:
+	\begin{itemize}
+		\item 2VA: seg 13-15, qui 9-11
+		\item 3TS: seg 7-9, qua 7-9
+	\end{itemize}
+
+	\item CRE1127:
+	\begin{itemize}
+		\item 4TR: ter 9-11, qui 9-11
+		\item 4KS: seg 15-17, qua 15-17
+	\end{itemize}
+
+	\item LET1920:
+	\begin{itemize}
+		\item 3VA: sex 9-11
+	\end{itemize}
+\end{itemize}
+
+Podemos observar de imediato que todo conjunto independente desse grafo é uma grade válida. Então, nosso problema na verdade é reduzido para um \textit{Maximum Independent Set}, onde o número de nós é $|S|$. O algoritmo trivial para o \textit{Maximum Independent Set} é $\Omega((n^2)*(2^n))$, onde são examinados todos os subconjuntos de vértices e, para cada um desses subconjuntos, conferimos se corresponde a um conjunto independente.
+
+Como o Maximum Independent Set é um problema clássico, existe uma série de algoritmos mais eficiente, como por exemplo aquele proposto em [4]\footnote{J.M. .Robson, “Algorithms for maximum independent sets", Journal of Algorithms 7 (3): pp 425–440, 1986} que tem complexidade assintótica O($2^{(0.276*n)}$). Entretanto, são muito mais complicados de implementar porque usam técnicas com distinções em muitos casos.
+
+Por isso, optamos para a primeira versão: utilizar uma heurística, que pode garantir ao menos uma resposta não-vazia, mas não necessariamente a máxima. Essa \textit{Heurística de Grade Maximal} é uma variação do algoritmo usado no problema de decisão, onde tentamos cada turma para uma matéria e, se não for possível montar uma grade com nenhuma dessas turmas, tentamos construir uma resposta excluindo aquela matéria.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{img/algoritmo_grade_maximal.png}
+    \caption{Heurística de grade maximal.}
+\end{figure}
+
+Essa heurística garante uma grade que não pode ser expandida com a adição de nenhuma turma das disciplina que interessam ao aluno, mas pode retornar uma grade com apenas uma disciplina se a primeira delas colidir com todas as demais turmas de todas as outras disciplinas.
+
+No caso, é possível ver que a grade gerada é maximal porque antes de ser testada a possibilidade de não incluir a matéria na grade, todas as turmas dessa matéria são testadas. Assim, se alguma das alternativas gerasse uma grade válida, já teria sido gerada uma solução usando essa turma.
 
 \end{document}
