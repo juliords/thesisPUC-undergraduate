@@ -12,7 +12,7 @@ all: $(TARGET).pdf
 	TEXINPUTS=".:$(LIBDIR):" pdflatex $*
 
 open: $(TARGET).pdf
-	evince $< &
+	okular $< &
 
 clean:
 	rm -rf *.{aux,lof,log,lot,out,toc,bbl,blg,brf}

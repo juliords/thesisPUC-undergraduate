@@ -63,7 +63,7 @@ E, não menos importante, à todos os alunos da PUC-Rio que utilizaram o PrISMA.
  }
  
  \resumo{
-Na PUC-Rio, no início de cada período os alunos devem informar quais turmas gostariam de cursar no próximo período. No entanto, o número de vagas por turmas é limitado e na maior parte das vezes não é possível atender a todos os pedidos de todos os alunos. Dessa maneira, através de uma aplicação web bastante poderosa, e ao mesmo tempo de fácil uso, o PrISMA tem por objetivo auxiliar os alunos passo a passo nas suas decisões na hora de montar o seu planejamento de turmas para o período seguinte.
+Na PUC-Rio, no início de cada período os alunos devem informar quais turmas gostariam de cursar no próximo período. No entanto, o número de vagas por turmas é limitado e na maior parte das vezes não é possível atender a todos os pedidos de todos os alunos. Dessa maneira, foi desenvolvido o sistema PrISMA, uma aplicação web de fácil uso cujo objetivo é auxiliar os alunos passo a passo nas suas decisões na hora de montar o seu planejamento de turmas para o período seguinte.
  }
  
  
@@ -77,7 +77,7 @@ Na PUC-Rio, no início de cada período os alunos devem informar quais turmas go
  }
  
  \resumouk{%
-At PUC-Rio, in the beginning of each period students tells which classes they would like to attend. However, given that the number of vacancies for classes is limited, in most cases it is not possible to attend all requests for all students. This is the problem PrISMA aims to minimize. Thus, through a very powerful and easy to use web application, PrISMA aims to assist students step by step in their decisions when scheduling classes for the following period.
+In the beginning of each academic term, PUC-Rio's students must choose those courses they would like to attend. However, there is a maximum number of enrolled students at each course for a given term. PrISMA is an user friendly web-based application that aims at helping the students on their options for enrollments. 
  }
 
 
@@ -163,7 +163,7 @@ Este sistema era oferecido apenas na primeira etapa de solicitação de matricul
 
 Como pode ser visto na imagem acima, deve-se tomar cuidado com a ordem de preenchimento das turmas na tabela. As células presentes em uma mesma linha representam opções. E as primeiras linhas tem uma maior prioridade sobre as demais.
 
-Ou seja, a tabela está relacionada diretamente à maneira como ela é processada, que é explicado pelo algoritmo que segue:
+Ou seja, a tabela está relacionada diretamente à maneira como ela é processada, que é explicado pelo passo-a-passo aproximado abaixo:
 
  \begin{enumerate}
  
@@ -203,13 +203,13 @@ O novo sistema adotado pela PUC-Rio para solicitação das turmas por parte dos 
     \caption{Matrícula em Tempo Real}
 \end{figure}
 
-Não apenas o sistema foi atualizado, como o modelo de matrícula também foi. Antes o \textit{Sistema de Solicitação de Matrícula} ficava disponível por diversos dias para todos os alunos e, após este tempo, as solicitações eram processadas respeitando a prioridade entre os alunos melhor classificados na universidade. Agora, são disponibilizados duas horas para que os alunos façam sua solicitação e que, no mesmo momento, saibam se tiveram sua solicitação atendida ou não. 
+Não apenas o sistema foi atualizado, como o modelo de matrícula também foi. Antes o \textit{Sistema de Solicitação de Matrícula} ficava disponível por diversos dias para todos os alunos e, após este tempo, as solicitações eram processadas respeitando a prioridade entre os alunos melhor classificados na universidade. Agora, são disponibilizadas duas horas para que os alunos façam sua solicitação e que, no mesmo momento, saibam se tiveram sua solicitação atendida ou não. 
 
 Isto é, o sistema fica disponível primeiro para os alunos melhores classificados, e assim por diante, até todos terem feito suas solicitações dentro de alguns dias. Conforme o sistema vai sendo utilizado, as turmas já serão preenchidas. Desta forma, os últimos a fazerem uso do sistema já terão uma oferta mais limitada de vagas. 
 
-O sistema em si apresenta diversas funcionalidades semelhantes às implementadas pelo PrISMA, facilitando a etapa de solicitação. Para o planejamento, a \textit{Matrícula em Tempo Real} é oferecido para os alunos antes da etapa oficial, mas neste momento não existe planejamento quanto ao preenchimento das turmas, demais opções caso aquelas selecionadas não sejam atendidas, ou mesmo é salvo o planejamento para a etapa oficial, bastante confirmar o que havia sido feito anteriormente.
+O sistema em si apresenta diversas funcionalidades semelhantes às implementadas pelo PrISMA, facilitando a etapa de solicitação. Para o planejamento, a \textit{Matrícula em Tempo Real} é oferecido para os alunos antes da etapa oficial, mas neste momento não existe simulação quanto ao preenchimento das turmas, demais opções caso aquelas selecionadas não sejam atendidas, ou mesmo é salvo o planejamento para a etapa oficial, bastante confirmar o que havia sido feito anteriormente.
 
-\section{Cuidados a ser tomados pelos alunos}
+\section{Planejamento dos alunos}
 
 No decorrer do planejamento das turmas a serem solicitadas se faz necessário que os alunos estejam atentos, além das disciplinas presentes no seu Falta-Cursar, na maneira como as turmas serão combinadas e a ordem e quantidade das disciplinas que serão cursadas. Conforme será visto a seguir.
 
@@ -293,9 +293,11 @@ A última versão foi modelada e implementada no final do ano de 2012. Nesta ép
     \caption{Versão proposta pelos designers}
 \end{figure}
 
-Segundo os requisitos funcionais de centralização de dados e fácil visualização do planejamento, a solução acima atende satisfatoriamente as necessidades dos alunos. 
+Na interface acima, diversas facilidades são oferecidas aos alunos. Primeiramente todos os dados encontram-se centralizados em um único sistema, como pode-se perceber nas abas na seção do lado esquerdo da interface. 
 
-No lado direito da interface é apresentada uma tabela de horários semanal, que apresenta cada turma selecionada em cima do seu respectivo horário, segundo o planejamento. Já no lado esquerdo são apresentadas as disciplinas do Falta-Cursar, Micro-Horário e disciplinas sugeridas. Sendo esta última fora do escopo, sendo assim substituída pelas disciplinas selecionadas, no mesmo formato apresentado pelo sistema Solicitação de Matrícula, da PUC-Rio.
+Cada aba tem um objetivo diferente, como será explicado. Na primeira estão as disciplinas presentes no Falta-Cursar. Ao se selecionar uma disciplina é aberto, logo abaixo, uma tabela com as suas respectivas turmas. Ao selecionar uma turma, ela é selecionada para o planejamento. Caso a disciplina escolhida seja um Grupo de Optativas (conjunto de disciplinas), as disciplinas que o compõe são exibidas na mesma tabela, abaixo da disciplina que representa o grupo. 
+
+Na aba de Micro-Horário é possível pesquisar por todas as turmas que serão oferecidas no próximo período. Na aba de Disciplinas Sugeridas é possível visualizar aquelas disciplinas sugeridas pelo sistema. No entanto, como essa última funcionalidade se encontra fora do escopo, foi substituída pelas disciplinas selecionadas, no mesmo formato apresentado pelo sistema \textit{Solicitação de Matrícula}.
 
 \begin{figure}[H]
     \centering
@@ -303,7 +305,11 @@ No lado direito da interface é apresentada uma tabela de horários semanal, que
     \caption{Aba de disciplinas selecionadas}
 \end{figure}
 
-No próximo capítulo será apresentada a etapa de modelagem, assim como todas as ferramentas e decisões tomadas para que todos os requisitos sejam atendidos. No capítulo 4 será apresentada a solução final, que utilizou este conceito como base.
+No lado direito da interface é apresentado uma tabela de horários semanal. A partir desta tabela é possível visualizar a combinação se horários a ser planejada. Todos os bloquinhos que representam uma mesma turma tem a mesma cor, que é diferente entre as turmas. Nesta interface também, na parte inferior, pode-se verificar que existem três opções para planejamento, que troca apenas a tabela de horários. Como será visto no capítulo 5.3.3, outra solução foi escolhida para este problema. 
+
+Esta interface apresentada consegue organizar todos os dados em uma única página, ao mesmo tempo que é agradável visualmente. E, por isso, foi utilizada como base para o desenvolvimento do PrISMA. 
+
+No próximo capítulo será apresentada a etapa de implementação, assim como todas as ferramentas e decisões tomadas para que todos os requisitos fossem atendidos. No capítulo 5 será apresentada a solução final, que utilizou este conceito como base.
 
 \chapter{Implementação}
 
@@ -614,11 +620,11 @@ Cara página, do ponto de vista do servidor, tem um arquivo Javascript e um arqu
 
 Na pasta “$<$root$>$/Public” estão as pastas “css”, “js” e “img”, que contém todos aqueles arquivos que serão providos ao navegador de forma estática. Isto é, não são modificados para cada requisição. Os arquivos CSS e JavaScript ali contidos já são aqueles processados e devidamente minimizados, conforme visto anteriormente.
 
-\section{Integração com a PUC-Rio}
+\section{Acoplamento com a PUC-Rio}
 
-O PrISMA foi desenvolvido de forma que, quando os alunos de graduação forem utilizar o sistema, tudo já esteja pronto. Ou seja, o aluno não precisa entrar com seus dados manualmente nem se cadastrar no sistema. Isso é possível por conta do suporte oferecido pela universidade, conforme será explicado a seguir.
+O PrISMA foi desenvolvido de forma que, quando os alunos de graduação forem utilizar o sistema, tudo já esteja pronto. Ou seja, o aluno não precisaria entrar com seus dados manualmente nem se cadastrar no sistema. Isso é possível por conta do suporte oferecido pela universidade, conforme será explicado a seguir.
 
-\subsection{Dados dos alunos}
+\subsection{Dados dos alunos necessários}
 
 Um pré-requisito para o funcionamento do PrISMA é a presença dos dados dos alunos. Por se tratarem de dados confidenciais, não se encontram disponíveis para todos. Por isso foi feita uma solicitação formal à PUC-Rio que, mediante assinatura de termo de confidencialidade, cedeu os dados necessários que foram utilizados no sistema enquanto esteve disponível para os alunos da universidade. 
 
@@ -636,7 +642,7 @@ O serviço disponibilizado é acessado por meio de uma requisição HTTPS, isto 
 
 Por motivo de segurança, a URL disponibilizada e o formato exato da requisição não será documentado neste relatório.
 
-\chapter{Solução final}
+\chapter{PrISMA em produção}
 
 O sistema desenvolvido é uma solução web que foi disponibilizado aos alunos da PUC-Rio durante três períodos, entre o primeiro semestre de 2013 e o primeiro semestre de 2014. 
 
@@ -942,7 +948,7 @@ E, para finalizar, resolver pequenos problemas de implementação e refinar as f
 
 \appendix
 
-\chapter{Principais trexos de códido do Banco de Dados}
+\chapter{Principais trechos de códido do Banco de Dados}
 
 \section{Função AlunoDisciplinaApto}
 
